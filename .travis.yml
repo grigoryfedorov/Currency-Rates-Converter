@@ -1,5 +1,6 @@
 language: android
 dist: trusty
+os: linux
 android:
   components:
     # Uncomment the lines below if you want to
@@ -19,5 +20,4 @@ android:
     - extra-android-m2repository
 
 
-  script:
-    ./gradlew build connectedCheck
+./gradlew build connectedCheck
