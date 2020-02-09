@@ -3,7 +3,7 @@ dist: trusty
 os: linux
 
 before_install:
-  - yes | sdkmanager "platforms;android-29"
+  - yes | sdkmanager "build-tools;android-28"
 
 android:
   components:
