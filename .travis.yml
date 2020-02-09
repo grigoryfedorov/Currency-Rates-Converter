@@ -1,6 +1,10 @@
 language: android
 dist: trusty
 os: linux
+
+before_install:
+  - yes | sdkmanager "platforms;android-29"
+
 android:
   components:
     # Uncomment the lines below if you want to
