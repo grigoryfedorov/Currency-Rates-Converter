@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Currency Rates Converter</string>
+    <string name="currency_rate_item_icon_content_description">Currency icon</string>
+    <string name="currency_rate_item_rate_hint">Enter value</string>
 </resources>

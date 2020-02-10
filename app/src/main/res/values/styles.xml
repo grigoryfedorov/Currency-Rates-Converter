@@ -8,4 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">@color/colorTextMain</item>
+    </style>
+
+    <style name="description">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="amount">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/colorTextMain</item>
+    </style>
+
 </resources>

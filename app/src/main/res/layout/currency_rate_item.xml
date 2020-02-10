@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:minHeight="72dp">
+
+    <ImageView
+        android:id="@+id/currency_rate_item_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/currency_rate_item_icon_content_description" />
+
+    <LinearLayout
+        android:id="@+id/currency_rate_item_currency_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/currency_rate_item_icon"
+        android:layout_toStartOf="@id/currency_rate_item_rate"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/currency_rate_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/title"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="5sp"
+            android:translationY="-2.62sp"
+            android:singleLine="true"
+            android:gravity="top"
+            tools:text="USD"/>
+
+        <TextView
+            android:id="@+id/currency_rate_item_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/description"
+            android:lineSpacingExtra="4sp"
+            android:translationY="-1.8sp"
+            android:gravity="top"
+            android:singleLine="true"
+            tools:text="US Dollar"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/currency_rate_item_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/amount"
+        android:lineSpacingExtra="5sp"
+        android:translationY="-2.28sp"
+        android:gravity="end|top"
+        android:layout_marginTop="21dp"
+        tools:text="1183.06"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:importantForAutofill="no"
+        android:hint="@string/currency_rate_item_rate_hint"
+        android:inputType="number"/>
+
+
+</RelativeLayout>
