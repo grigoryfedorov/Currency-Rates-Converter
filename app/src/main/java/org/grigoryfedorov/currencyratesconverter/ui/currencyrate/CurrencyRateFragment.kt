@@ -1,4 +1,4 @@
-package org.grigoryfedorov.currencyratesconverter.ui
+package org.grigoryfedorov.currencyratesconverter.ui.currencyrate
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,7 +16,8 @@ import org.grigoryfedorov.currencyratesconverter.domain.CurrencyRate
 class CurrencyRateFragment : Fragment() {
 
     companion object {
-        fun newInstance() = CurrencyRateFragment()
+        fun newInstance() =
+            CurrencyRateFragment()
     }
 
     private lateinit var viewModel: CurrencyRateViewModel
@@ -37,10 +38,15 @@ class CurrencyRateFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        currencyRateAdapter = CurrencyRateAdapter(CurrencyRateDiffUtilCallback())
+        currencyRateAdapter =
+            CurrencyRateAdapter(
+                CurrencyRateDiffUtilCallback()
+            )
         recyclerView.adapter = currencyRateAdapter
 
-        viewModel = ViewModelProvider(this, CurrencyRateViewModelFactory())
+        viewModel = ViewModelProvider(this,
+            CurrencyRateViewModelFactory()
+        )
             .get(CurrencyRateViewModel::class.java)
 
         viewModel.currencyRates.observe(viewLifecycleOwner, Observer<List<CurrencyRate>> {

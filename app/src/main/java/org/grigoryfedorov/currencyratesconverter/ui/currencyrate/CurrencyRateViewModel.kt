@@ -1,4 +1,4 @@
-package org.grigoryfedorov.currencyratesconverter.ui
+package org.grigoryfedorov.currencyratesconverter.ui.currencyrate
 
 import android.util.Log
 import androidx.lifecycle.LiveData

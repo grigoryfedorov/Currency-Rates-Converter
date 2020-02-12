@@ -1,4 +1,4 @@
-package org.grigoryfedorov.currencyratesconverter.ui
+package org.grigoryfedorov.currencyratesconverter.ui.currencyrate
 
 import androidx.recyclerview.widget.DiffUtil
 import org.grigoryfedorov.currencyratesconverter.domain.CurrencyRate

@@ -3,6 +3,7 @@ package org.grigoryfedorov.currencyratesconverter.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import org.grigoryfedorov.currencyratesconverter.R
+import org.grigoryfedorov.currencyratesconverter.ui.currencyrate.CurrencyRateFragment
 
 class MainActivity : AppCompatActivity() {
 

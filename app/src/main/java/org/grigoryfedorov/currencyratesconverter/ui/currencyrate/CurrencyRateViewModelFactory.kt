@@ -1,4 +1,4 @@
-package org.grigoryfedorov.currencyratesconverter.ui
+package org.grigoryfedorov.currencyratesconverter.ui.currencyrate
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -26,7 +26,9 @@ class CurrencyRateViewModelFactory : ViewModelProvider.Factory {
             val currencyRatesInteractor = CurrencyRatesInteractorImpl(currencyRatesRepository)
 
             @Suppress("UNCHECKED_CAST")
-            return CurrencyRateViewModel(currencyRatesInteractor) as T
+            return CurrencyRateViewModel(
+                currencyRatesInteractor
+            ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

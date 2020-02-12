@@ -1,4 +1,4 @@
-package org.grigoryfedorov.currencyratesconverter.ui
+package org.grigoryfedorov.currencyratesconverter.ui.currencyrate
 
 import android.view.View
 import android.widget.EditText
