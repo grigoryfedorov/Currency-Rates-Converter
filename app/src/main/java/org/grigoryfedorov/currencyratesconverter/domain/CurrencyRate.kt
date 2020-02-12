@@ -1,8 +1,8 @@
 package org.grigoryfedorov.currencyratesconverter.domain
 
 data class CurrencyRate(
-    val currencyShortName: String,
-    val currencyLongName: String,
+    val id: String,
+    val description: String,
     val rate: Double,
     val icon: String
 )

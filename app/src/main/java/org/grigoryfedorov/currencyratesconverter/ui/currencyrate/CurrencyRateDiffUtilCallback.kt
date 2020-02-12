@@ -1,14 +1,13 @@
 package org.grigoryfedorov.currencyratesconverter.ui.currencyrate
 
 import androidx.recyclerview.widget.DiffUtil
-import org.grigoryfedorov.currencyratesconverter.domain.CurrencyRate
 
-class CurrencyRateDiffUtilCallback : DiffUtil.ItemCallback<CurrencyRate>() {
-    override fun areItemsTheSame(oldItem: CurrencyRate, newItem: CurrencyRate): Boolean {
-        return oldItem.currencyShortName == newItem.currencyShortName
+class CurrencyRateDiffUtilCallback : DiffUtil.ItemCallback<CurrencyItemUiState>() {
+    override fun areItemsTheSame(oldItem: CurrencyItemUiState, newItem: CurrencyItemUiState): Boolean {
+        return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: CurrencyRate, newItem: CurrencyRate): Boolean {
+    override fun areContentsTheSame(oldItem: CurrencyItemUiState, newItem: CurrencyItemUiState): Boolean {
         return oldItem == newItem
     }
 }

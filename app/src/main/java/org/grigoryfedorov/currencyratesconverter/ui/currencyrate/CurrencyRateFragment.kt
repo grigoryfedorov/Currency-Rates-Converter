@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import org.grigoryfedorov.currencyratesconverter.R
-import org.grigoryfedorov.currencyratesconverter.domain.CurrencyRate
 
 class CurrencyRateFragment : Fragment() {
 
@@ -40,7 +39,8 @@ class CurrencyRateFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         currencyRateAdapter =
             CurrencyRateAdapter(
-                CurrencyRateDiffUtilCallback()
+                CurrencyRateDiffUtilCallback(),
+                AdapterListener()
             )
         recyclerView.adapter = currencyRateAdapter
 
@@ -49,7 +49,7 @@ class CurrencyRateFragment : Fragment() {
         )
             .get(CurrencyRateViewModel::class.java)
 
-        viewModel.currencyRates.observe(viewLifecycleOwner, Observer<List<CurrencyRate>> {
+        viewModel.currencyRates.observe(viewLifecycleOwner, Observer<List<CurrencyItemUiState>> {
             currencyRateAdapter.submitList(it)
         })
     }
@@ -57,5 +57,16 @@ class CurrencyRateFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         viewModel.onStart()
+    }
+
+    private inner class AdapterListener : CurrencyRateAdapter.Listener {
+        override fun onItemClick(id: String, value: String) {
+            viewModel.onCurrencyRateItemClick(id, value)
+        }
+
+        override fun onInput(id: String, value: String) {
+            viewModel.onCurrencyValueInput(id, value)
+        }
+
     }
 }

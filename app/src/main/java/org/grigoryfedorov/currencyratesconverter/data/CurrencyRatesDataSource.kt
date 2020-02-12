@@ -4,13 +4,13 @@ import org.grigoryfedorov.currencyratesconverter.domain.CurrencyRate
 import org.grigoryfedorov.currencyratesconverter.domain.CurrencyRates
 
 class CurrencyRatesDataSource(private val currencyRatesService: CurrencyRatesService) {
-    suspend fun getCurrencyRates(): CurrencyRates {
-        val apiCurrencyRates = currencyRatesService.getLatestCurrencyRates("EUR")
+    suspend fun getCurrencyRates(currencyId: String): CurrencyRates {
+        val apiCurrencyRates = currencyRatesService.getLatestCurrencyRates(currencyId)
 
             val rates: List<CurrencyRate> = apiCurrencyRates.rates.keySet().map {
             CurrencyRate(
-                currencyShortName = it,
-                currencyLongName = "",
+                id = it,
+                description = "",
                 rate = apiCurrencyRates.rates.get(it).asDouble,
                 icon = ""
             )
